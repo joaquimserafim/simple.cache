@@ -5,7 +5,7 @@ a simple lru cache
 ----
 <a href="https://nodei.co/npm/simple.cache/"><img src="https://nodei.co/npm/simple.cache.png?downloads=true"></a>
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg?style=flat-square)](https://travis-ci.org/joaquimserafim/simple.cache)[![Coverage Status](https://coveralls.io/repos/github/joaquimserafim/simple.cache/badge.svg)](https://coveralls.io/github/joaquimserafim/simple.cache)[![ISC License](https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square)](https://github.com/joaquimserafim/simple.cache/blob/master/LICENSE)[![NodeJS](https://img.shields.io/badge/node-6.x.x-brightgreen.svg?style=flat-square)](https://github.com/joaquimserafim/simple.cache/blob/master/package.json#L39)
+[![Build Status](https://travis-ci.org/joaquimserafim/simple.cache.svg?branch=master)](https://travis-ci.org/joaquimserafim/simple.cache)[![Coverage Status](https://coveralls.io/repos/github/joaquimserafim/simple.cache/badge.svg)](https://coveralls.io/github/joaquimserafim/simple.cache)[![ISC License](https://img.shields.io/badge/license-ISC-blue.svg?style=flat-square)](https://github.com/joaquimserafim/simple.cache/blob/master/LICENSE)[![NodeJS](https://img.shields.io/badge/node-6.x.x-brightgreen.svg?style=flat-square)](https://github.com/joaquimserafim/simple.cache/blob/master/package.json#L39)
 
 [![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
@@ -13,7 +13,7 @@ a simple lru cache
 ### api
 `const cache = require('simple.cache')`
 
-`cache(max)` *max** integer, default value of 1000
+`cache(max)` **max** integer, default value of 1000
 
 #### methods
 * **set(key, value)** void, set a new entry and value
