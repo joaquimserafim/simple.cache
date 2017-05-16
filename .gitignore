@@ -4,3 +4,4 @@ node_modules
 coverage
 bench.js
 .nyc_output
+*.html
