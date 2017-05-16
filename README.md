@@ -11,9 +11,9 @@ a simple lru cache
 
 
 ### api
-`const cache = require('simple.cache')`
+`const SimpleCache = require('simple.cache')`
 
-`cache(max)` **max** integer, default value of 1000
+`SimpleCache(max)` **max** integer, default to 1000
 
 #### methods
 * **set(key, value)** void, set a new entry and value
@@ -31,9 +31,9 @@ a simple lru cache
 
 
 ```js
-const Cache = require('simple.cache')
+const SimpleCache = require('simple.cache')
 
-const myCache = Cache()
+const myCache = SimpleCache()
 
 myCache.set('foo', 123)
 myCache.set('bar', 456)
