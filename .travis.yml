@@ -9,3 +9,4 @@
   email:
    - joaquim.serafim@gmail.com
  script: npm test
+ after_success: npm run coverage
