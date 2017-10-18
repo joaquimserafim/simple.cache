@@ -71,8 +71,7 @@ describe('SimpleCache', () => {
     done()
   })
 
-  it('should fill the entire cache and start to move old entries' +
-    ' into the cache',
+  it('should fill the entire cache and move old entries into the 2nd cache',
     (done) => {
       cache.set('soufly', 'bleed')
       cache.set(~~(Math.random() * 10), Math.random())
@@ -115,13 +114,15 @@ describe('SimpleCache', () => {
     done()
   })
 
-  it('should #clear the data in the cache', (done) => {
-    // clear cache
-    cache.clear()
+  it('should #clear the data in the cache and update a existing key',
+    (done) => {
+      // clear cache
+      cache.clear()
 
-    cache.set('soufly', 'bleed')
-    cache.set('soufly', 'sepultura')
-    expect(cache.get('soufly')).to.be.deep.equal('sepultura')
-    done()
-  })
+      cache.set('soufly', 'bleed')
+      cache.set('soufly', 'sepultura')
+      expect(cache.get('soufly')).to.be.deep.equal('sepultura')
+      done()
+    }
+  )
 })
