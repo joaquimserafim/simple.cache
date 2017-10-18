@@ -74,8 +74,8 @@ describe('SimpleCache', () => {
   it('should fill the entire cache and move old entries into the 2nd cache',
     (done) => {
       cache.set('soufly', 'bleed')
-      cache.set(~~(Math.random() * 10), Math.random())
-      cache.set(~~(Math.random() * 10), Math.random())
+      cache.set('1', Math.random())
+      cache.set('2', Math.random())
 
       expect(cache.size()).to.be.deep.equal(0)
       expect(cache.has('soufly')).to.be.deep.equal(true)
