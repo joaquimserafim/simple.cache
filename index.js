@@ -12,17 +12,16 @@ class SimpleCache {
     this._cache0 = this._cache1 = Object.create(null)
     this._size = 0
     this._max = max || 1000
-    this._update = update.bind(this)
+  }
 
-    function update (key, value) {
-      this._cache0[key] = value
-      this._size += 1
+  _update (key, value) {
+    this._cache0[key] = value
+    this._size += 1
 
-      if (this._size > this._max) {
-        this._size = 0
-        this._cache1 = this._cache0
-        this._cache0 = Object.create(null)
-      }
+    if (this._size > this._max) {
+      this._size = 0
+      this._cache1 = this._cache0
+      this._cache0 = Object.create(null)
     }
   }
 
