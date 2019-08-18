@@ -3,7 +3,7 @@ interface ICache {
 }
 
 export default function SimpleCahe(
-  max: number
+  max?: number
 ): {
   has: (key: string | number) => boolean;
   remove: (key: string | number) => void;
