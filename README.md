@@ -23,7 +23,7 @@ a simple lru cache
 * **size()** integer, get the size of the cache
 * **clear()** void, clear cache 
 * **keys()** array, returns the keys from the cache
-* **dump()** string, retrieves the entire cache
+* **dump()** object, retrieves the entire cache
 
 
 ### example
