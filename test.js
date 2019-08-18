@@ -6,18 +6,17 @@ max-len: ["error", 80]
 */
 'use strict'
 
-const mocha   = require('mocha')
-const expect  = require('chai').expect
+const mocha = require('mocha')
+const expect = require('chai').expect
 
-const it        = mocha.it
-const describe  = mocha.describe
+const it = mocha.it
+const describe = mocha.describe
 
 const SimpleCache = require('.')
 
 let cache = SimpleCache(2)
 
 describe('SimpleCache', () => {
-
   it('should return a SimpleCache object', (done) => {
     expect(cache.constructor.name).to.be.equal('SimpleCache')
     done()
@@ -44,18 +43,13 @@ describe('SimpleCache', () => {
     done()
   })
 
-  it('should return the #entries in the cache', (done) => {
-    expect(cache.entries()).to.be.deep.equal({'soufly': 'bleed'})
-    done()
-  })
-
-  it('should return the #keys in the cache', (done) => {
+  it('should return the #keys from the cache', (done) => {
     expect(cache.keys()).to.be.deep.equal(['soufly'])
     done()
   })
 
-  it('should #dump the data in the cache', (done) => {
-    expect(cache.dump()).to.be.deep.equal('{"soufly":"bleed"}')
+  it('should #dump the data from the cache', (done) => {
+    expect(cache.dump()).to.be.deep.equal({ soufly: 'bleed' })
     done()
   })
 
@@ -71,17 +65,15 @@ describe('SimpleCache', () => {
     done()
   })
 
-  it('should fill the entire cache and move old entries into the 2nd cache',
-    (done) => {
-      cache.set('soufly', 'bleed')
-      cache.set('1', Math.random())
-      cache.set('2', Math.random())
+  it('when cache full should move objs to the backup cache', (done) => {
+    cache.set('soufly', 'bleed')
+    cache.set('1', Math.random())
+    cache.set('2', Math.random())
 
-      expect(cache.size()).to.be.deep.equal(0)
-      expect(cache.has('soufly')).to.be.deep.equal(true)
-      done()
-    }
-  )
+    expect(cache.size()).to.be.deep.equal(0)
+    expect(cache.has('soufly')).to.be.deep.equal(true)
+    done()
+  })
 
   it('should #remove a given key from the cache', (done) => {
     cache.remove('soufly')
@@ -89,8 +81,9 @@ describe('SimpleCache', () => {
     done()
   })
 
-  it('should move an entry from the cache into the cache when using #get' +
-    ' when does not exists in cache',
+  it(
+    'should move an entry from the cache into the cache when using #get' +
+      ' when does not exists in cache',
     (done) => {
       cache.clear()
 
@@ -114,15 +107,13 @@ describe('SimpleCache', () => {
     done()
   })
 
-  it('should #clear the data in the cache and update a existing key',
-    (done) => {
-      // clear cache
-      cache.clear()
+  it('should update an existing key', (done) => {
+    // clear cache
+    cache.clear()
 
-      cache.set('soufly', 'bleed')
-      cache.set('soufly', 'sepultura')
-      expect(cache.get('soufly')).to.be.deep.equal('sepultura')
-      done()
-    }
-  )
+    cache.set('soufly', 'bleed')
+    cache.set('soufly', 'sepultura')
+    expect(cache.get('soufly')).to.be.deep.equal('sepultura')
+    done()
+  })
 })
