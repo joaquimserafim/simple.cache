@@ -60,16 +60,12 @@ class SimpleCache {
     this._size = 0
   }
 
-  entries () {
-    return this._cache0
-  }
-
   keys () {
     return Object.keys(this._cache0)
   }
 
   dump () {
-    return JSON.stringify(this._cache0)
+    return this._cache0
   }
 
 }

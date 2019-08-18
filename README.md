@@ -21,10 +21,9 @@ a simple lru cache
 * **has(key)** boolean, check if a given key already exists
 * **remove(key)** void, remove a given key from the first cache
 * **size()** integer, get the size of the cache
-* **clear()** void, clear cache
-* **entries()** object, returns the entries from the cache,
+* **clear()** void, clear cache 
 * **keys()** array, returns the keys from the cache
-* **dump()** string, dumps the cache and uses JSON.stringify
+* **dump()** string, retrieves the entire cache
 
 
 ### example
