@@ -1,6 +1,6 @@
 {
   "name": "simple.cache",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "a simple lru cache",
   "main": "index.js",
   "types": "index.d.ts",

@@ -2,7 +2,7 @@ interface ICache {
   [key: string]: any;
 }
 
-export default function SimpleCahe(
+export default function SimpleCache(
   max?: number
 ): {
   has: (key: string | number) => boolean;
